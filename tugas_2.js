@@ -15,8 +15,6 @@ const getmonth = (callback) => {
 function tampil_data(error, month){
     console.log(error)
     // console.log(month)
-    month.map(bulan=> {
-        console.log(bulan)
-    })
+    console.log(data.map(item=>item))
 }
 getmonth(tampil_data)
