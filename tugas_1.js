@@ -15,17 +15,26 @@ const cekHariKerja = (day) =>{
     })
 }
 
-
-try{
-    cekHariKerja("senin").then(resolvedValue=>{
-        console.log(resolvedValue)
-        console.log("sukses")
-    }).catch(err => {
+cekHariKerja("senin").then(resolvedValue=>{
+      console.log(resolvedValue)
+      console.log("sukses")
+}).catch(err => {
         console.log(err)
-    })
-}catch(error){
-    console.log(error + " program gagal berjalan")
+})
+
+async function proces(_hari){
+    try {
+        const hari = await cekHariKerja(_hari)
+        console.log(hari)
+    }catch(err){
+        console.log(err)
+    }finally{
+        console.log('Proses Berakhir')
+    }
 }
+
+proces('senin')
+
 
 /*
 penggunaan then-catch untuk program ini adalah 
